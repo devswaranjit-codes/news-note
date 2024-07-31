@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note-Trend</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="favicon.jpeg" type="image/x-icon">
+</head>
+<body>
+    <h1>Note-Trend</h1>
+    <div id="search-container">
+        <form id="search-form">
+            <input type="text" id="query" placeholder="Enter your interest" required>
+            <button type="submit">Search</button>
+        </form>
+        <button id="access-notes">Access Notes</button>
+    </div>
+    <div id="news-container">Loading trending news...</div>
+
+    <!-- Note Section -->
+    <div id="note-section" style="display: none;">
+        <h2>Saved Notes</h2>
+        <div id="saved-notes"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
