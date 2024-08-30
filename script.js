@@ -2,7 +2,7 @@ const apiKey = 'b9d577ad908a4a4d97b763b219a6e31a'; // Replace with your actual A
 
 // Fetch and display trending news
 function fetchTrendingNews() {
-    const url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=' + apiKey; // Fetch news for India
+    const url = 'https://newsapi.org/v2/top-headlines?country=in&apiKey=' + apiKey; // Fetch news
 
     fetch(url)
         .then(function(response) {
@@ -16,6 +16,7 @@ function fetchTrendingNews() {
             console.error('Error fetching news:', error);
         });
 }
+
 
 // Display news articles
 function displayNews(articles) {
@@ -63,6 +64,8 @@ function displayNews(articles) {
     });
 }
 
+
+
 // Handle search form submission
 document.getElementById('search-form').addEventListener('submit', function(e) {
     e.preventDefault();
@@ -84,11 +87,15 @@ document.getElementById('search-form').addEventListener('submit', function(e) {
        
 });
 
+
+
 // Share news via WhatsApp
 function shareNews(url, title) {
     const shareUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(title + ' ' + url);
     window.open(shareUrl, '_blank');
 }
+
+
 
 // Save note to local storage
 function saveNote(url, title) {
@@ -98,6 +105,8 @@ function saveNote(url, title) {
     alert('Note saved!');
 }
 
+
+
 // Remove a note
 function removeNote(index) {
     const notes = JSON.parse(localStorage.getItem('notes')) || [];
@@ -105,6 +114,8 @@ function removeNote(index) {
     localStorage.setItem('notes', JSON.stringify(notes));
     displaySavedNotes(); // Refresh the saved notes display
 }
+
+
 
 // Access all saved notes
 function displaySavedNotes() {
@@ -144,6 +155,7 @@ function displaySavedNotes() {
 
     document.getElementById('note-section').style.display = 'block';
 }
+
 
 // Fetch trending news when the page loads
 fetchTrendingNews();
