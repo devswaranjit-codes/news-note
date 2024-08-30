@@ -51,7 +51,14 @@ function displayNews(articles) {
         const noteBtn = document.createElement('button');
         noteBtn.textContent = 'Take Note';
         noteBtn.onclick = function() {
-            saveNote(article.url, article.title);
+            saveNote(article.url, article.title, article.description);
+        };
+
+        
+        const shareBtn = document.createElement('button');
+        shareBtn.textContent = 'Share on WhatsApp';
+        shareBtn.onclick = function() {
+        shareNews(article.url, article.title);
         };
 
         articleDiv.appendChild(image);
@@ -59,6 +66,7 @@ function displayNews(articles) {
         articleDiv.appendChild(description);
         articleDiv.appendChild(readMoreBtn);
         articleDiv.appendChild(noteBtn);
+        articleDiv.appendChild(shareBtn);
 
         newsContainer.appendChild(articleDiv);
     });
